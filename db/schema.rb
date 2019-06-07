@@ -10,6 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_06_07_172312) do
+
+  create_table "pools", force: :cascade do |t|
+    t.string "pool_desc"
+    t.integer "user_id"
+    t.string "pool_name"
+    t.string "building_name"
+    t.string "address"
+    t.datetime "pool_open"
+    t.datetime "pool_close"
+    t.boolean "has_happy_hour"
+    t.datetime "hh_open"
+    t.datetime "hh_close"
+    t.boolean "has_food"
+    t.string "website"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "email"
+  end
 
 end

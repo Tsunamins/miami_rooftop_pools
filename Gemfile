@@ -12,3 +12,4 @@ gem 'thin'
 gem 'shotgun'
 gem 'bcrypt'
 gem "tux"
+gem "pry-remote"

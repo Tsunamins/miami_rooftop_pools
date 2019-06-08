@@ -1,5 +1,6 @@
 
 require './config/environment'
+require 'pry-remote'
 
 if ActiveRecord::Base.connection.migration_context.needs_migration?
   raise 'Migrations are pending. Run `rake db:migrate` to resolve the issue.'

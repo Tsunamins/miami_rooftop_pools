@@ -2,7 +2,7 @@
 <h2>My Pools</h2>
 <p><a href="/pools/new_pool"><button>Add A Pool</button></a></p>
 <hr>
-<h2><%= @user.username %>'s Pools</h2>
+<h2><%= Helpers.current_user(session)%>'s Pools</h2>
 <% @pools.each do |pool| %>
 <h3> <a href="pools/<%= pool.id %>"> <%= pool.pool_name %> : <%= pool.pool_desc %></a></h3>
 
@@ -13,7 +13,8 @@
 
 <div>
     <form method=post action='/logout'>
-        <input type='submit' name="Logout">
+        
+        <input type='submit' value="Logout">
     </form>
 
 </div>

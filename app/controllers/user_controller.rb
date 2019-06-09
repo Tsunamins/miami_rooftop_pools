@@ -38,8 +38,20 @@ class UserController < ApplicationController
     end
 
     get '/user_home' do 
+      @user = Helpers.current_user(session)
+      @pools = Pool.all
         erb :'users/show_user_home'
     end 
+
+    get '/logout' do 
+      if Helpers.is_logged_in?(session)
+        session.clear 
+      else 
+        redirect to '/'
+      end 
+        redirect to '/login'
+    end 
+  end 
 
 
 

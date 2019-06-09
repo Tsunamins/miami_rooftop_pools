@@ -2,4 +2,18 @@
 <h2>My Pools</h2>
 <p><a href="/pools/new_pool"><button>Add A Pool</button></a></p>
 <hr>
-<h2>All Pools</h2>
+<h2><%= @user.username %>'s Pools</h2>
+<% @pools.each do |pool| %>
+<h3> <a href="pools/<%= pool.id %>"> <%= pool.pool_name %> : <%= pool.pool_desc %></a></h3>
+
+<hr> 
+<% end %>
+
+
+
+<div>
+    <form method=post action='/logout'>
+        <input type='submit' name="Logout">
+    </form>
+
+</div>

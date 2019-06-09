@@ -27,6 +27,30 @@
     <p>Pool Hours: <%= @pool.pool_open %>AM  to <%=@pool.pool_close%>PM</p>
     <p>Happy Hour: <%= @pool.hh_open %> PM  to <%=@pool.hh_close%> PM</p>
 </div>
+<div>
+    <p>Edit</p>
+    <form action="/pools/<%=@pool.id %>/edit" method="get">
+  <input type="submit" value="Edit this Pool">
+  
+</form>
+</div>
+<br>
+<div>
+    <p>Delete</p>
+    <form action="/pools/<%= @pool.id %>/delete" method="post"> 
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete this Pool">
+
+</form>
+
+</div>
+
+<div>
+    <form method=post action='/logout'>
+        <input type='submit' name="Logout">
+    </form>
+
+</div>
 
 
 

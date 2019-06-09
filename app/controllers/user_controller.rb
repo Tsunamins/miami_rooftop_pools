@@ -40,6 +40,7 @@ class UserController < ApplicationController
     get '/user_home' do 
       @user = Helpers.current_user(session)
       @pools = Pool.all
+      
         erb :'users/show_user_home'
     end 
 

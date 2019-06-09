@@ -15,7 +15,6 @@ class PoolController < ApplicationController
         else
           erb :'pools/new_pool'
         end
-
     end
 
     post '/pool' do
@@ -31,21 +30,14 @@ class PoolController < ApplicationController
       
       #user.pools.build(params['pool']) #just for notes         
     end  
-      redirect to "/pools/#{@pool.id}"      
-    
+      redirect to "/pools/#{@pool.id}"     
   end 
 
     get '/pools/:id' do
       redirect to '/login' unless Helpers.is_logged_in?(session)
       @pool = Pool.find(params[:id])
       @user = Helpers.current_user(session)
-      
-      #temporary below to try to fix missing user_id from earlier posts
-      for Pool.all.each |missing_id|
-        if missing_id[:id] == nil 
-          missing_id.delete 
-        end 
-      end 
+        
   
       erb :'/pools/show_pool'
     end
@@ -87,12 +79,8 @@ class PoolController < ApplicationController
         end
       else
         redirect to '/login'
-      end
+      
     end
-
-  
-    
-  
-
+  end
 
 end 

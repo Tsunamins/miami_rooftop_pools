@@ -1,7 +1,35 @@
+<h1>Showing from show_pool</h1>
 <h1>Pool Details</h1>
 <p><%= @temporary %></p>
-<p><%= @temporary2 %></p>
+
 <br>
+<h1><%= @user.username %>'s Post</h1>
+<hr>
+<div>
+    <h2><%= @pool.pool_name %></h2>
+    <p>Hotel or Building: <%= @pool.building_name %></p>
+    <p>Address: <%= @pool.address %></p>
+    <p>Website: <%= @pool.website %></p>
+    <br>
+    <p>Description: <%= @pool.pool_desc %></p>
+    <br>
+    <% if @pool.has_food == true %>
+        <p>Pool has food or a menu: Yes</p>
+    <% else %>
+        <p>Pool has food or a menu: No</p>
+    <% end %>
+    <br>
+     <% if @pool.has_happy_hour == true %>
+        <p>Pool has a happy hour: Yes</p>
+    <% else %>
+        <p>Pool has food or a menu: No</p>
+    <% end %>
+    
+    <br>
+    <p>Pool Hours: <%= @pool.pool_open %>AM  to <%=@pool.pool_close%>PM</p>
+    <p>Happy Hour: <%= @pool.hh_open %> PM  to <%=@pool.hh_close%> PM</p>
+</div>
+
 
 
 

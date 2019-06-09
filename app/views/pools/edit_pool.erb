@@ -1,0 +1,42 @@
+<h1>Edit Pool</h1>
+<form action="/pools/<%= @pool.id %>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <label>Make changes to <%= @pool.pool_name %> here: </label>
+  </br> 
+  <label for="pool_name">Pool Name: </label>
+  <input type="text" name="pool[pool_name]" id="pool_name">
+
+  <label for="building_name">Name of the Hotel or Building: </label>
+  <input type="text" name="pool[building_name]" id="building_name">
+  <label for="address">Address: </label>
+  <input type="text" name="pool[address]" id="address">
+
+  </br>
+  <label for="website">Website: </label>
+  <input type="text" name="pool[website]" id="website">
+  </br>
+  <label for="pool_desc">Pool Description: </label>
+  <textarea type="text" name="pool[pool_desc]" id="pool_desc" rows="20" cols="40"></textarea>
+  </br>
+  <label for="has_food">Does the pool have food or a menu?</label>
+  <input type="checkbox" name="pool[has_food] value="has_food">
+  <label for="has_happy_hour">Does the pool bar have a happy hour?</label>
+  <input type="checkbox" name="pool[has_happy_hour] value="has_happy_hour">
+
+  </br>
+  <p>Hours</p>
+  <label for="pool_open">Pool Opens</label>
+  <p><input type="number" name="pool[pool_open]" id="pool_open"> AM</p>
+  </br>
+  <label for="pool_close">Pool Closes</label>
+  <p><input type="number" name="pool[pool_close]" id="pool_close"> PM</p>
+  </br>
+  <label for="hh_open">Happy Hour Starts</label>
+  <p><input type="number" name="pool[hh_open]" id="hh_open"> PM</p>
+  </br>
+  <label for="hh_close">Happy Hour Ends</label>
+  <p><input type="number" name="pool[hh_close]" id="hh_close"> PM</p>
+
+  <input type="submit" value="Edit this Pool">
+  
+</form>

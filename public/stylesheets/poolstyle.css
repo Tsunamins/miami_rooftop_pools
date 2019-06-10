@@ -26,6 +26,9 @@ body {
     border-radius: 4px;
 }
 
+#header div {
+    margin-left: 50px;
+}
 
 
 div.sign { 
@@ -141,6 +144,8 @@ ul.inline li a:hover {
     .poollisting {
         text-decoration: none;
         color: rgb(43, 67, 86);
+        margin-left: 10%;
+        margin-right: 10%;
 
     }
 
@@ -149,4 +154,7 @@ ul.inline li a:hover {
         color: rgb(43, 67, 86);
 
     }
+
+/* styling add new pool page */
+
   

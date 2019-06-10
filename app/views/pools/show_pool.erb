@@ -1,7 +1,7 @@
 <h1>Temporary tag Showing from show_pool</h1>
 
 <br>
-<h1><%= @user.username %>'s Post</h1>
+<h1><%= Helpers.current_user(session).username %>'s Post</h1>
 <hr>
 <div>
     <h2><%= @pool.pool_name %></h2>
@@ -28,20 +28,28 @@
     <p>Happy Hour: <%= @pool.hh_open %> PM  to <%=@pool.hh_close%> PM</p>
 </div>
 <div>
-    <p>Edit</p>
-    <form action="/pools/<%=@pool.id %>/edit" method="get">
-  <input type="submit" value="Edit this Pool">
-  
-</form>
+    <% if @pool.user == Helpers.current_user(session) %>
+        <p>Edit</p>
+        <form action="/pools/<%=@pool.id %>/edit" method="get">
+        <input type="submit" value="Edit this Pool">
+        </form>
+    <% else %>
+        <p></p> 
+    <% end %>
 </div>
 <br>
 <div>
-    <p>Delete</p>
-    <form action="/pools/<%= @pool.id %>/delete" method="post"> 
-    <input id="hidden" type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete this Pool">
+    <% if @pool.user == Helpers.current_user(session) %>
+        <p>Delete</p>
+            <form action="/pools/<%= @pool.id %>/delete" method="post"> 
+            <input id="hidden" type="hidden" name="_method" value="delete">
+            <input type="submit" value="Delete this Pool">
+        </form>
+    <% else %>
+        <p></p> 
+    <% end %>
 
-</form>
+
 
 </div>
 

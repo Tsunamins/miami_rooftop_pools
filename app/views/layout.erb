@@ -6,11 +6,19 @@
   </head>
   <body>
   <div class="container"> 
+  
 
     <header id="header"><h1><a href='/'>Miami Rooftop Pools</a></h1>
         <h4>A place to keep and show a list of Miami Rooftop Pools to Visit</h4>
-        
+        <div>
+        <%if Helpers.is_logged_in?(session) %>
+          <form method=post action='/logout'>
+          <input type='submit' value="Logout" class="buttons">
+          </form>
+        </div>
+        <% end %>
     </header>
+   
      <%= yield %>
 
 

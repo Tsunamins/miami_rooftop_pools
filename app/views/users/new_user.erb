@@ -1,10 +1,14 @@
-<h3>Create an Account</h3>
-<form action="/signup" method="post">
-  <label for="username">Username: </label>
-  <input type="text" name="username" id="username">
-  <label for="email">Email: </label>
-  <input type="text" name="email" id="email">
-  <label for="password">Password: </label>
-  <input type="password" name="password" id="password">
-  <input type="submit" value="Sign Up">
-</form>
+<div class="sign">
+<h3 class="create">Create an Account</h3>
+    <form action="/signup" method="post" class="login">
+      <label for="username">Username: </label>
+      <input type="text" name="username" id="username" placeholder="Choose a Username...">
+      <label for="email">Email: </label>
+      <input type="text" name="email" id="email" placeholder="Email address...">
+      <label for="password">Password: </label>
+      <input type="password" name="password" id="password" placeholder="Choose a password...">
+      <input type="submit" value="Sign Up" class="buttons">
+    </form>
+    <br>
+  <p class="signinup">Already have an account? <a href='/login' class="buttons">Go to Log In page...</a></p>
+</div>

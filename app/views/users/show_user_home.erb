@@ -1,23 +1,34 @@
-<h1>Welcome</h1>
-<h2>My Pools</h2>
-<p><a href="/pools/new_pool"><button>Add A Pool</button></a></p>
-<hr>
-
-
-
-<h2><%= @user.username %>'s Pools</h2>
+<div class="sign">
+    <ul class="userhome">
+        <li><%= Helpers.current_user(session).username %>'s pools</li>
+        <li><a href="/pools/new_pool" class="buttons">Add A Pool</a></li>
+    </ul>    
+    
+</div>
+<div class="poollisting">
 <% @pools.each do |pool| %>
-<h3> <a href="pools/<%= pool.id %>"> <%= pool.pool_name %> : <%= pool.pool_desc %></a></h3>
+    <% if pool.user_id == @pool_user_match %>
+    
+    <h3><a href="pools/<%= pool.id %>"> <%= pool.pool_name %> : <%= pool.pool_desc %></a></h3>
+    <% end %>
+    <% end %>
+</div>
 
-<hr> 
+ 
+
+
+
+<hr>
+<div class="poollisting">
+    <h2>Featured Pools</h2>
+      <% @pools.each do |pool| %>
+    <h3> <a href="pools/<%= pool.id %>"> <%= pool.pool_name %> : <%= pool.pool_desc %></a></h3>
 <% end %>
+</div>
 
 
-
-<div>
+<div id="logout">
     <form method=post action='/logout'>
-        
-        <input type='submit' value="Logout">
+        <input type='submit' value="Logout" class="buttons">
     </form>
-
 </div>

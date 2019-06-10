@@ -1,17 +1,49 @@
-ul {
+#header { 
+    background-image: linear-gradient(to bottom right, rgb(10, 78, 109), rgb(45, 171, 188));
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#header h1, h4 {
+    margin-left: 50px;
+    color: rgb(207, 191, 161);
+    
+}
+
+div.sign { 
+    background-color: rgb(255, 244, 213);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* inline log in and sign up buttons  */
+ul.inline {
 list-style-type: none;
-  margin: 0;
+  margin-left: 25%;
+  width: 100%;
   padding: 0;
   overflow: hidden;
 }
 
-li {
+ul.inline li {
     float: left;
+    font-size: 40px;
+    padding-left: 15px;
+   
+
 }
 
-li a {
+ul.inline li a {
     display: block;
   padding: 8px;
-  background-color: #dddddd;    
+  background-color: rgb(79, 144, 155);
+  text-decoration: none;
+  color: rgb(43, 67, 86);
+  padding: 60px;
+}
+
+ul.inline li a:hover {
+    background-color: rgb(136, 201, 200);
+
 }
 

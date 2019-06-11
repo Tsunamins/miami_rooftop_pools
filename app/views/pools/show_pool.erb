@@ -10,9 +10,9 @@
 
         
         <ul class="displaypool">
-          <li><p>Hotel or Building: <%= @pool.building_name %></p></li>
-          <li><p>Address: <%= @pool.address %></p></li>
-          <li><p>Website: <%= @pool.website %> </p></li>
+          <li>Hotel or Building: <%= @pool.building_name %></p></li>
+          <li>Address: <%= @pool.address %></li>   
+          <li>Website: <a href="<%=@pool.website%>"><%=@pool.website%></a></li>
         </ul>
 
         <p class="details">Description: <%= @pool.pool_desc %></p>
@@ -34,6 +34,9 @@
             <li>Pool Hours: <%= @pool.pool_open %>AM  to <%=@pool.pool_close%>PM</li>
             <li>Happy Hour: <%= @pool.hh_open %> PM  to <%=@pool.hh_close%> PM</li>
         </ul>
+
+        
+                
 
         <ul class="displaypool">
             <li><% if @pool.user == Helpers.current_user(session) %>

@@ -6,6 +6,7 @@ body {
     background-image: linear-gradient(to bottom right, rgb(10, 78, 109), rgb(45, 171, 188));
     padding-top: 20px;
     padding-bottom: 20px;
+    border-radius: 4px;
 }
 
 #header h1, h4 {
@@ -35,6 +36,7 @@ div.sign {
     background-color: rgba(255, 244, 213, 0.603);
     padding-top: 15px;
     padding-bottom: 15px;
+    
 }
 
 /* inline log in and sign up buttons  */
@@ -156,5 +158,87 @@ ul.inline li a:hover {
     }
 
 /* styling add new pool page */
+.addpool input[type=text], textarea, input[type=number], input[type=checkbox]   {
+    padding: 12px 20px;
+    border: 2px solid rgba(43, 67, 86, 0.5);
+    border-radius: 10px;
+}
+
+.addpool {
+    list-style-type: none;    
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    font-size: 20px;
+    color: rgb(43, 67, 86);
+    margin-left: 50px;
+}
+
+.addpool li {
+    float: left;    
+    padding: 10px;
+}
+
+.addpool h2 {
+    margin-left: 40%;
+}
+
+.indent {
+    margin-left: 10%;
+
+}
+
+/* style how the pool details will display */
+.displaypool {
+    list-style-type: none;    
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    font-size: 20px;
+    color: rgb(43, 67, 86);
+    margin-left: 50px;
+
+}
+
+.displaypool li {
+    float: left;    
+    padding: 10px;
+}
+
+.details {
+    
+    color: rgb(43, 67, 86);
+
+}
+
+p.details {
+    font-size: 20px;
+    margin-left: 60px;
+}
+
+h2.details {
+    font-size: 40px;
+    margin-left: 35%;
+}
+
+h1.details {
+    padding-left: 100px;
+    background-color: rgba(255, 244, 213, 0.603);
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
+/* style an area the pool details are within */
+#displayarea {
+    margin: auto;
+    width: 100%;
+    border: 1px solid rgba(43, 67, 86, 0.5);
+    border-radius: 8px;
+
+}
+
+
+
 
   

@@ -1,67 +1,56 @@
-<h1>Temporary tag Showing from show_pool</h1>
 
-<br>
-<h1><%= Helpers.current_user(session).username %>'s Post</h1>
-<hr>
 <div>
-    <h2><%= @pool.pool_name %></h2>
-    <p>Hotel or Building: <%= @pool.building_name %></p>
-    <p>Address: <%= @pool.address %></p>
-    <p>Website: <%= @pool.website %></p>
-    <br>
-    <p>Description: <%= @pool.pool_desc %></p>
-    <br>
-    <% if @pool.has_food == true %>
-        <p>Pool has food or a menu: Yes</p>
-    <% else %>
-        <p>Pool has food or a menu: No</p>
-    <% end %>
-    <br>
-     <% if @pool.has_happy_hour == true %>
-        <p>Pool has a happy hour: Yes</p>
-    <% else %>
-        <p>Pool has food or a menu: No</p>
-    <% end %>
+<h1 class="details" ><%= Helpers.current_user(session).username %>'s Post</h1>
+
+    <div id="displayarea">
+        <h2 class="details"><%= @pool.pool_name %></h2>
+        <ul class="displaypool">
+          <li><p>Hotel or Building: <%= @pool.building_name %></p></li>
+          <li><p>Address: <%= @pool.address %></p></li>
+          <li><p>Website: <%= @pool.website %></p></li>
+        </ul>
+
+        <p class="details">Description: <%= @pool.pool_desc %></p>
+
+        <ul class="displaypool">
+            <% if @pool.has_food == true %>
+              <li><p>Pool has food or a menu: Yes</p></li>
+            <% else %>
+              <li><p>Pool has food or a menu: No</p></li>
+            <% end %>
+            <% if @pool.has_happy_hour == true %>
+                <li><p>Pool has a happy hour: Yes</p></li>
+            <% else %>
+                 <li><p>Pool has food or a menu: No</p></li>
+            <% end %>
+        </ul>
+
+        <ul class="displaypool">
+            <li>Pool Hours: <%= @pool.pool_open %>AM  to <%=@pool.pool_close%>PM</li>
+            <li>Happy Hour: <%= @pool.hh_open %> PM  to <%=@pool.hh_close%> PM</li>
+        </ul>
+
+        <ul class="displaypool">
+            <li><% if @pool.user == Helpers.current_user(session) %>
+                <form action="/pools/<%=@pool.id %>/edit" method="get">
+                <input type="submit" value="Edit this Pool" class="buttons">
+                </form>
+             
+                <% end %>
+            </li>
+            <li><% if @pool.user == Helpers.current_user(session) %>
+                <form action="/pools/<%= @pool.id %>/delete" method="post"> 
+                <input id="hidden" type="hidden" name="_method" value="delete">
+                <input type="submit" value="Delete this Pool" class="buttons">
+                </form>
+            
+                <% end %>
+            </li>
+            
+    </ul>
+
+</div> 
+    <h3><a href="/user_home" class="buttons">Back to Home Page </a> </h3>
     
-    <br>
-    <p>Pool Hours: <%= @pool.pool_open %>AM  to <%=@pool.pool_close%>PM</p>
-    <p>Happy Hour: <%= @pool.hh_open %> PM  to <%=@pool.hh_close%> PM</p>
 </div>
-<div>
-    <% if @pool.user == Helpers.current_user(session) %>
-        <p>Edit</p>
-        <form action="/pools/<%=@pool.id %>/edit" method="get">
-        <input type="submit" value="Edit this Pool">
-        </form>
-    <% else %>
-        <p></p> 
-    <% end %>
-</div>
-<br>
-<div>
-    <% if @pool.user == Helpers.current_user(session) %>
-        <p>Delete</p>
-            <form action="/pools/<%= @pool.id %>/delete" method="post"> 
-            <input id="hidden" type="hidden" name="_method" value="delete">
-            <input type="submit" value="Delete this Pool">
-        </form>
-    <% else %>
-        <p></p> 
-    <% end %>
-
-
-
-</div>
-
-<div>
-    <form method=post action='/logout'>
-        
-        <input type='submit' value="Logout">
-    </form>
-
-</div>
-
-
-
-
 

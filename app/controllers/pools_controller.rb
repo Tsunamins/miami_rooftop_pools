@@ -96,26 +96,6 @@ class PoolController < ApplicationController
       erb :'pools/all_pools'
     end
 
-    get '/view_user' do
-      if Helpers.is_logged_in?(session)
-        @users = User.all
-        @pools = Pool.all
-        erb :'/pools/view_user_pools'
-      else
-        redirect to '/users/login'
-      end
-    end
-
-    get '/view_user/:username' do 
-      redirect to '/login' unless Helpers.is_logged_in?(session)
-      @username = Pool.find(params[:username])
-      
-
-      
-      #add some get variable data here @User.all for example
-      #add variable to search for a user to link to their page
-      #going to need username and user_id, etc.
-      erb :'pools/view_user_pools'
-    end
+    
 
 end 

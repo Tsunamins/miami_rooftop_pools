@@ -1,8 +1,8 @@
 <div>
-<h3>Add a New Pool to your list</h3>
+
 <form action="/pool" method="post">
   <div>
-  <ul class="addpool">
+  <ul class="addpool"><h2>Add a New Pool to your list</h2>
     <li>
       <label for="pool_name">Pool Name: </label>
       <input type="text" name="pool[pool_name]" id="pool_name">
@@ -22,19 +22,19 @@
   </ul>
   </div>
     
-    <div>
-      <p>Pool Description:
-      <textarea type="text" name="pool[pool_desc]" id="pool_desc" rows="10" cols="80" maxlength="500" placeholder="Enter a description, limit to 500 characters"></textarea>
+    <div class="addpool">
+      <p class="indent">Pool Description:</p>
+      <textarea class="indent" type="text" name="pool[pool_desc]" id="pool_desc" rows="10" cols="80" maxlength="500" placeholder="Enter a description, limit to 500 characters"></textarea>
     </div>
     
-    <div><p>Food and Drink:</p>
-      <label for="has_food">Does the pool have food or a menu?</label>
+    <div class="addpool"><p class="indent">Food and Drink:</p>
+      <label class="indent" for="has_food">Does the pool have food or a menu?</label>
       <input type="checkbox" name="pool[has_food] value="has_food">
-      <label for="has_happy_hour">Does the pool bar have a happy hour?</label>
+      <label class="indent" for="has_happy_hour">Does the pool bar have a happy hour?</label>
       <input type="checkbox" name="pool[has_happy_hour] value="has_happy_hour">
     </div>
     
-    <div><p>Hours</p>
+    <div>
     <ul class="addpool">
       <li>
         <label for="pool_open">Pool Opens</label>
@@ -52,12 +52,16 @@
         <label for="hh_close">Happy Hour Ends</label>
         <input type="number" name="pool[hh_close]" id="hh_close"> PM 
       </li>
+      <li>
+        <input type="submit" value="Post Your Pool" class="buttons">
+      </li>
+
     </ul>
     </div>
-  <input type="submit" value="Post Your Pool">
+  
   
 </form>
 
-<h3><a href="/user_home">Back to Home Page </a> </h3>
+<h3><a href="/user_home" class="buttons">Back to Home Page </a> </h3>
 
 </div>

@@ -21,7 +21,8 @@ class PoolController < ApplicationController
       user = Helpers.current_user(session)
     if user.nil?
       redirect to '/login'
-    elsif params[:pool][:pool_name].empty?
+    elsif (params[:pool][:pool_name].empty? || params[:pool][:building_name].empty?)
+            
       redirect to '/pools/new_pool'
     else
       @pool = Pool.create(params['pool'])
@@ -81,5 +82,10 @@ class PoolController < ApplicationController
       
     end
   end
+
+    get '/view_all' do 
+      @pools = Pool.all
+      erb :'pools/all_pools'
+    end
 
 end 

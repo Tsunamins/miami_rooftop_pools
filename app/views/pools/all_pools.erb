@@ -1,0 +1,6 @@
+<h1>All Pools</h1>
+<h1>Pool Details</h1>
+<% @pools.each do |pool| %>
+    <h3> <a href="pools/<%= pool.id %>"> <%= pool.pool_name %> : <%= pool.pool_desc %></a></h3>
+<% end %>
+<h3><a href="/user_home" class="buttons">Back to Home Page </a> </h3>

@@ -37,8 +37,15 @@ class PoolController < ApplicationController
 
     get '/pools/:id' do
       redirect to '/login' unless Helpers.is_logged_in?(session)
-      @pool = Pool.find(params[:id]) 
-  
+      @pool = Pool.find(params[:id])
+      @users = User.all
+      @pool.user_id 
+      get_user = @pool.user_id
+      @match_user = @users.detect {|match_id| match_id.id == get_user}
+      # match_user.id will get id number
+      # match_user.username will get username
+
+      
       erb :'/pools/show_pool'
     end
 
@@ -84,8 +91,31 @@ class PoolController < ApplicationController
   end
 
     get '/view_all' do 
+      redirect to '/login' unless Helpers.is_logged_in?(session)
       @pools = Pool.all
       erb :'pools/all_pools'
+    end
+
+    get '/view_user' do
+      if Helpers.is_logged_in?(session)
+        @users = User.all
+        @pools = Pool.all
+        erb :'/pools/view_user_pools'
+      else
+        redirect to '/users/login'
+      end
+    end
+
+    get '/view_user/:username' do 
+      redirect to '/login' unless Helpers.is_logged_in?(session)
+      @username = Pool.find(params[:username])
+      
+
+      
+      #add some get variable data here @User.all for example
+      #add variable to search for a user to link to their page
+      #going to need username and user_id, etc.
+      erb :'pools/view_user_pools'
     end
 
 end 

@@ -1,9 +1,14 @@
 
 <div>
-<h1 class="details" ><%= Helpers.current_user(session).username %>'s Post</h1>
+<h1 class="details" ><%= @match_user.username %>'s Post</h1>
 
     <div id="displayarea">
         <h2 class="details"><%= @pool.pool_name %></h2>
+        <h4 class="details">Posted by <%= @match_user.username %></h4>
+        
+
+
+        
         <ul class="displaypool">
           <li><p>Hotel or Building: <%= @pool.building_name %></p></li>
           <li><p>Address: <%= @pool.address %></p></li>

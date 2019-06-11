@@ -232,6 +232,9 @@ h1.details {
     padding-bottom: 15px;
 
 }
+h4.details {
+    margin-left: 35%;
+}
 
 /* style an area the pool details are within */
 #displayarea {

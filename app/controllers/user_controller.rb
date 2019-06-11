@@ -11,15 +11,26 @@ class UserController < ApplicationController
         if Helpers.is_logged_in?(session)
             redirect to '/pools'
           elsif !(params.has_value?(""))
-            @user = User.create(params)
-            binding.pry
-            session["user_id"] = @user.id
-           
-            redirect to '/user_home'
+             check_users = User.all 
+            
+              #binding.pry 
+              check_username = check_users.detect{|email| email.email == params[:email]}
+              check_email = check_users.detect{|username| username.username == params[:username]}
+            
+              if check_username == nil && check_email == nil
+                @user = User.create(params)
+                session["user_id"] = @user.id
+                redirect to '/user_home'   
+                
+              else
+                
+                redirect to '/signup'
+              end #end inner if
+                         
           else
             redirect to '/signup'
-          end
-        end
+        end #close first if
+    end #close do
 
     get '/login' do 
         if Helpers.is_logged_in?(session)

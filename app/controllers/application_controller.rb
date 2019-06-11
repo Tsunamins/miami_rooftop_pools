@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
    
     enable :sessions
-      set :session_secret, "somewordfornow" #review how to use correct authentication
+      set :session_secret, "password_security" #review how to use correct authentication
   end
 
  

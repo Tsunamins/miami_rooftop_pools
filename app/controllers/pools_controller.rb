@@ -26,7 +26,8 @@ class PoolController < ApplicationController
     else
       @pool = Pool.create(params['pool'])
       @pool[:user_id] = user.id
-      @pool.save #is this necessary?   
+      @pool.save 
+         
       
       #user.pools.build(params['pool']) #just for notes         
     end  

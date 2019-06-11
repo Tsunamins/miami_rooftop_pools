@@ -12,6 +12,7 @@ class UserController < ApplicationController
             redirect to '/pools'
           elsif !(params.has_value?(""))
             @user = User.create(params)
+            binding.pry
             session["user_id"] = @user.id
            
             redirect to '/user_home'
@@ -31,7 +32,9 @@ class UserController < ApplicationController
         @user = User.find_by(:username => params[:username])
             if @user && @user.authenticate(params[:password])
             session["user_id"] = @user.id
+            
             redirect to "/user_home"
+            
           else
             redirect to "/login"
           end
@@ -42,6 +45,7 @@ class UserController < ApplicationController
         @user = Helpers.current_user(session)
         @pool_user_match = @user.id
         @pools = Pool.all 
+        
        
         
       

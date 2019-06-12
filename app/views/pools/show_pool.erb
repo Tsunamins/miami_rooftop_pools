@@ -4,11 +4,7 @@
 
     <div id="displayarea">
         <h2 class="details"><%= @pool.pool_name %></h2>
-        <h4 class="details">Posted by <%= @match_user.username %></h4>
-        
-
-
-        
+        <h4 class="details"><a href="/view_user/<%=@match_user.username%>">Posted by: <%=@match_user.username%></a></h4>        
         <ul class="displaypool">
           <li>Hotel or Building: <%= @pool.building_name %></p></li>
           <li>Address: <%= @pool.address %></li>   

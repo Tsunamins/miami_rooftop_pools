@@ -51,14 +51,10 @@ class UserController < ApplicationController
           end
     end
 
-    get '/user_home' do 
-     
+    get '/user_home' do      
         @user = Helpers.current_user(session)
         @pool_user_match = @user.id
-        @pools = Pool.all 
-        
-       
-        
+        @pools = Pool.all        
       
         erb :'users/show_user_home'
         
@@ -74,6 +70,8 @@ class UserController < ApplicationController
         redirect to '/login'
      
     end 
+
+   
 
 
 

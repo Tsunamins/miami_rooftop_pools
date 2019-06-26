@@ -7,6 +7,7 @@
 </div>
 <div class="poollisting">
 
+<!-- changed below to utilize active record assoc, simplify code -->
 <% @user.pools.each do |pool| %>    
     <h3><a href="pools/<%= pool.id %>"> <%= pool.pool_name %> : <%= pool.pool_desc %></a></h3>    
     <% end %>

@@ -52,12 +52,10 @@ class UserController < ApplicationController
     end
 
     get '/user_home' do      
-        @user = Helpers.current_user(session)
-        @pool_user_match = @user.id
-        @pools = Pool.all        
+        @user = Helpers.current_user(session)       
+        @pools = Pool.all    
       
-        erb :'users/show_user_home'
-        
+        erb :'users/show_user_home'      
         
     end 
 

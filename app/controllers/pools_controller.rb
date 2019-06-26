@@ -43,10 +43,8 @@ class PoolController < ApplicationController
       @pool.user_id 
       get_user = @pool.user_id
       @match_user = @users.detect {|match_id| match_id.id == get_user}
-      # match_user.id will get id number
-      # match_user.username will get username
-
-      
+      # match_user.id will get id number properly
+      # match_user.username will get username properly      
       erb :'/pools/show_pool'
     end
 

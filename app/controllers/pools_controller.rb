@@ -38,13 +38,7 @@ class PoolController < ApplicationController
     get '/pools/:id' do
       redirect to '/login' unless Helpers.is_logged_in?(session)
       @pool = Pool.find(params[:id])
-      
       @users = User.all
-      @pool.user_id 
-      get_user = @pool.user_id
-      @match_user = @users.detect {|match_id| match_id.id == get_user}
-      # match_user.id will get id number properly
-      # match_user.username will get username properly      
       erb :'/pools/show_pool'
     end
 

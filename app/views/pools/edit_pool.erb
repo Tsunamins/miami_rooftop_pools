@@ -6,15 +6,15 @@
     <ul class="addpool"><p>Edit <%= @pool.pool_name %></p>
       <li>
       <label for="pool_name">Pool Name: </label>
-      <input type="text" name="pool[pool_name]" id="pool_name">
+      <input type="text" name="pool[pool_name]" id="pool_name" value="<%= @pool.pool_name %>">
     </li>
     <li>
       <label for="building_name">Name of the Hotel or Building: </label>
-      <input type="text" name="pool[building_name]" id="building_name">
+      <input type="text" name="pool[building_name]" id="building_name" value="<%= @pool.building_name%>">
     </li>
     <li>
       <label for="address">Address: </label>
-      <input type="text" name="pool[address]" id="address">
+      <input type="text" name="pool[address]" id="address" value="<%= @pool.address %>">
     </li>
       <li>
         <label for="website">Website: </label>
@@ -25,7 +25,7 @@
     
     <div class="addpool">
       <p class="indent">Pool Description:</p>
-      <textarea class="indent" type="text" name="pool[pool_desc]" id="pool_desc" rows="10" cols="80" maxlength="500" placeholder="Enter a description, limit to 500 characters"></textarea>
+      <textarea class="indent" type="text" name="pool[pool_desc]" id="pool_desc" rows="10" cols="80" maxlength="500"><%= @pool.pool_desc %></textarea>
     </div>
     
     <div class="addpool"><p class="indent">Food and Drink:</p>
@@ -39,19 +39,19 @@
     <ul class="addpool">
       <li>
         <label for="pool_open">Pool Opens</label>
-        <input type="number" name="pool[pool_open]" id="pool_open"> AM
+        <input type="number" name="pool[pool_open]" id="pool_open" value="<%= @pool.pool_open %>"> AM
       </li>
       <li>
         <label for="pool_close">Pool Closes</label>
-        <input type="number" name="pool[pool_close]" id="pool_close"> PM
+        <input type="number" name="pool[pool_close]" id="pool_close" value="<%= @pool.pool_close %>"> PM
       </li>
       <li>
         <label for="hh_open">Happy Hour Starts</label>
-        <input type="number" name="pool[hh_open]" id="hh_open"> PM
+        <input type="number" name="pool[hh_open]" id="hh_open" value="<%= @pool.hh_open %>"> PM
       </li>
       <li>
         <label for="hh_close">Happy Hour Ends</label>
-        <input type="number" name="pool[hh_close]" id="hh_close"> PM 
+        <input type="number" name="pool[hh_close]" id="hh_close" value="<%= @pool.hh_close %>"> PM 
       </li>
       <li>
         <input type="submit" value="Edit this Pool" class="buttons">

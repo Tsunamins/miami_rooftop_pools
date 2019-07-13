@@ -46,7 +46,11 @@ class PoolController < ApplicationController
       redirect to '/login' unless Helpers.is_logged_in?(session)
   
       @pool = Pool.find(params[:id])
-      if @pool.user == Helpers.current_user(session)
+      
+      #binding.pry
+      if @pool.user.id != session["user_id"] 
+        redirect to '/user_home'
+      elsif @pool.user == Helpers.current_user(session)
           erb :'/pools/edit_pool'
       else
         redirect to '/login'

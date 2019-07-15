@@ -14,11 +14,9 @@
         <p class="details">Description: <%= @pool.pool_desc %></p>
 
         <ul class="displaypool">
-            <% if @pool.has_food == true %>
-              <li><p>Pool has food or a menu: Yes</p></li>
-            <% else %>
-              <li><p>Pool has food or a menu: No</p></li>
-            <% end %>
+        <!-- keep logic out of view example for food vs. happy hour -->
+        <li><p>Pool has food or a menu: <%= @pool.food? %></p></li>
+                       
             <% if @pool.has_happy_hour == true %>
                 <li><p>Pool has a happy hour: Yes</p></li>
             <% else %>

@@ -48,6 +48,7 @@ class PoolController < ApplicationController
       @pool = Pool.find(params[:id])
       
       #binding.pry
+      #was in wrong place
       if @pool.user.id != session["user_id"] 
         redirect to '/user_home'
       elsif @pool.user == Helpers.current_user(session)
@@ -60,7 +61,9 @@ class PoolController < ApplicationController
     patch '/pools/:id' do
       @pool = Pool.find(params[:id])
   
-      if params[:pool][:pool_name].empty?
+      if @pool.user.id != session["user_id"] 
+        redirect to '/user_home'
+      elsif params[:pool][:pool_name].empty?
         redirect to "/pools/#{@pool.id}/edit"
       end
   
@@ -71,21 +74,15 @@ class PoolController < ApplicationController
     end 
 
     delete '/pools/:id/delete' do
-      if Helpers.is_logged_in?(session)
+      redirect to '/login' unless Helpers.is_logged_in?(session)
+      #if Helpers.is_logged_in?(session)
         @pool = Pool.find(params[:id])
         if @pool.user == Helpers.current_user(session)
-          @pool = Pool.find_by_id(params[:id])
-          @pool.delete
-          redirect to '/user_home'
-          
-        else
-          redirect to '/user_home'
-        end
-      else
-        redirect to '/login'
-      
+                   
+          @pool.delete                  
+        end   
+        redirect to '/user_home'
     end
-  end
 
     get '/view_all' do 
       redirect to '/login' unless Helpers.is_logged_in?(session)

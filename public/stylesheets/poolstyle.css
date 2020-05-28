@@ -40,48 +40,24 @@ div.sign {
     background-color: rgba(255, 244, 213, 0.603);
     padding-top: 15px;
     padding-bottom: 15px;
+    color: rgb(43, 67, 86);
+    font-size: 30px;
     
 }
 
-/* inline log in and sign up buttons  */
-ul.inline {
-list-style-type: none;
-  margin-left: 25%;
-  width: 100%;
-  padding: 0;
-  overflow: hidden;
-}
 
-ul.inline li {
-    float: left;
-    font-size: 40px;
-    padding-left: 15px;
-   
+  
 
-}
-
-ul.inline li a {
-    display: block;
-  padding: 8px;
-  background-color: rgb(79, 144, 155);
-  text-decoration: none;
-  color: rgb(43, 67, 86);
-  padding: 60px;
-}
-
-ul.inline li a:hover {
-    background-color: rgb(136, 201, 200);
-
-}
 
 
 /* login and forms styling */
 
 .login {
-    margin-left: 15%;
+    /* margin-left: 15%; */
 
 }
 .login input[type=text], input[type=password] {
+    
     padding: 12px 20px;
     border: 2px solid rgba(43, 67, 86, 0.5);
     border-radius: 10px;
@@ -118,16 +94,55 @@ ul.inline li a:hover {
   }
 
   /* additional adjustments for login and signup pages */
-  .create {
-      margin-left: 15%;
+  #formtitle {
+    
       font-size: 30px;
       color: rgb(43, 67, 86);
   }
 
+  body > div > div > h3 {
+    color: rgb(43, 67, 86);
+  }
+
   .signinup { 
-      margin-left: 40%;
+      /* margin-left: 40%; */
       color: rgb(43, 67, 86);
   }
+
+
+/* inline log in and sign up buttons  */
+ul.inline {
+    list-style-type: none;
+      margin-left: 25%;
+      width: 100%;
+      padding: 0;
+      overflow: hidden;
+    }
+    
+    ul.inline li {
+        float: left;
+        font-size: 40px;
+        padding-left: 15px;
+       
+    
+    }
+    
+    ul.inline li a {
+        display: block;
+      padding: 8px;
+      background-color: rgb(79, 144, 155);
+      text-decoration: none;
+      color: rgb(43, 67, 86);
+      padding: 60px;
+    }
+    
+    ul.inline li a:hover {
+        background-color: rgb(136, 201, 200);
+    
+    }
+
+
+
 
   /* Adjustments to show_user_home.erb */
   ul.userhome {

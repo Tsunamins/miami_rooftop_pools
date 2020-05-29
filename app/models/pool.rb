@@ -9,4 +9,14 @@ class Pool < ActiveRecord::Base
         end 
     end 
 
+    def hh?
+        if has_happy_hour == true
+            "Yes"
+        else
+            "No"
+        end
+    end
+
+    
+
 end 

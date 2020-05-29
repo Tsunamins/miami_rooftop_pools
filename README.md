@@ -1,8 +1,11 @@
 # miami_rooftop_pools
-Sinatra Project for learn.co
+
 
 Description: 
-A Sinatra App to keep track of Miami Pools that one may like to visit or know of.
+A Sinatra App to keep track of Miami Pools that one may like to visit or know of, users can create an account, view other pool posts of other users, post their own pools, edit and delete their own pools.  Incorporates styling with CSS animations and bootstrap.
+
+Related Video: https://youtu.be/rlPety4CSeY
+Related Blog Post: https://tsunamins.github.io/sinatra_project_-_miami_rooftop_pools
 
 
 Install Instructions:

@@ -110,51 +110,18 @@ div.sign {
   }
 
 
-/* inline log in and sign up buttons  */
-ul.inline {
-    list-style-type: none;
-      margin-left: 25%;
-      width: 100%;
-      padding: 0;
-      overflow: hidden;
-    }
-    
-    ul.inline li {
-        float: left;
-        font-size: 40px;
-        padding-left: 15px;
-       
-    
-    }
-    
-    ul.inline li a {
-        display: block;
-      padding: 8px;
-      background-color: rgb(79, 144, 155);
-      text-decoration: none;
-      color: rgb(43, 67, 86);
-      padding: 60px;
-    }
-    
-    ul.inline li a:hover {
-        background-color: rgb(136, 201, 200);
-    
-    }
-
-
-
 
   /* Adjustments to show_user_home.erb */
   ul.userhome {
     list-style-type: none;
-      margin-left: 40%;
+      /* margin-left: 40%; */
       width: 100%;
       padding: 30px;
       overflow: hidden;
     }
     
     ul.userhome li {
-        float: left;
+        /* float: left; */
         font-size: 50px;
         padding-left: 15px;  
         color: rgb(43, 67, 86);
@@ -163,20 +130,52 @@ ul.inline {
 
     /* style the pool listings */
     .poollisting {
+        margin-top: 50px;
+        margin-bottom: 50px;
         text-decoration: none;
         color: rgb(43, 67, 86);
-        margin-left: 10%;
-        margin-right: 10%;
+        /* margin-left: 10%;
+        margin-right: 10%; */
+       
 
+    }
+
+    .eachpool:hover {
+        background-color: rgba(240, 128, 128, 0.397);
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+        text-decoration: none;
+        color: rgb(43, 67, 86);
+    }
+
+    .eachpool a:visited {
+        color: rgb(43, 67, 86);
+        text-decoration: none;
     }
 
     .poollisting a {
         text-decoration: none;
         color: rgb(43, 67, 86);
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+        padding: 20px;
+        margin: 10px;
+        border: 2px solid lightcoral;
+        word-wrap: normal;
+        display: inline-block;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      
 
     }
 
-/* styling add new pool page */
+    
+
+
+/* styling add new and edit pool page */
 .addpool input[type=text], textarea, input[type=number], input[type=checkbox]   {
     padding: 12px 20px;
     border: 2px solid rgba(43, 67, 86, 0.5);
@@ -185,80 +184,92 @@ ul.inline {
 
 .addpool {
     list-style-type: none;    
-    width: 100%;
-    padding: 0;
-    overflow: hidden;
     font-size: 20px;
     color: rgb(43, 67, 86);
-    margin-left: 50px;
-}
+ }
 
-.addpool li {
-    float: left;    
-    padding: 10px;
-}
+ #poolsubmit {
+     text-align: center;
+     margin: auto;
+    width: 50%;
 
-.addpool h2 {
-    margin-left: 40%;
-}
+ }
 
-.indent {
-    margin-left: 10%;
 
-}
-
-/* style how the pool details will display */
-.displaypool {
+/* edit or delete pool buttons */
+.edit-delete {
     list-style-type: none;    
-    width: 100%;
+    
     padding: 0;
     overflow: hidden;
     font-size: 20px;
     color: rgb(43, 67, 86);
     margin-left: 50px;
-
 }
-
-.displaypool li {
+.edit-delete li {
     float: left;    
     padding: 10px;
 }
 
-.details {
-    
-    color: rgb(43, 67, 86);
 
-}
-
-p.details {
-    font-size: 20px;
-    margin-left: 60px;
-}
-
-h2.details {
-    font-size: 40px;
-    margin-left: 35%;
-}
-
-h1.details {
-    padding-left: 100px;
+/* user name who posted */
+h1#posted-by {
     background-color: rgba(255, 244, 213, 0.603);
+    color: rgb(43, 67, 86);
     padding-top: 15px;
     padding-bottom: 15px;
+    padding-left: 100px;
 
 }
-h4.details {
-    margin-left: 35%;
-}
+
 
 /* style an area the pool details are within */
-#displayarea {
-    margin: auto;
-    width: 100%;
+div.details.jumbotron {
+    color: rgb(43, 67, 86);
     border: 1px solid rgba(43, 67, 86, 0.5);
     border-radius: 8px;
+    background-color: rgba(240, 128, 128, 0.589);
 
 }
+
+
+/* noteworthy selector: li:nth-child(1) */
+.list-group > li  {
+    background-color: rgba(43, 67, 86, 0.5);
+    color: rgb(233, 211, 139);
+}
+
+
+/* index view styling with login and signup initiators */
+.index {
+    list-style-type: none;
+    font-size: 40px;
+
+}
+
+li.list-group-item.col {
+    background-color: rgba(79, 144, 155, 0.678);
+    margin: 10%;
+    color: rgb(43, 67, 86);
+    min-height: 200px;
+
+}
+
+li.list-group-item.col a, li.list-group-item.col a:visited {
+    text-decoration: none;
+    color: rgb(43, 67, 86);
+}
+
+li.list-group-item.col a:hover {
+    background-color: rgba(255, 127, 80, 0.815);
+
+}
+
+
+    
+  
+
+
 
 
 

@@ -1,6 +1,23 @@
-<h1>All Pools</h1>
-<h1>Pool Details</h1>
+<h1 class="text-center">All Pools</h1>
+
+<div class="card-deck">
 <% @pools.each do |pool| %>
-    <h3> <a href="pools/<%= pool.id %>"> <%= pool.pool_name %> : <%= pool.pool_desc %></a></h3>
+    <div class="card" style="width: 18rem;">
+        <img src="/images/swimming_pool.svg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title"><%= pool.pool_name %> </h5>
+            <p class="card-text"><%= pool.pool_desc %></p>
+        </div>
+         <ul class="list-group list-group-flush">
+                <li class="list-group-item">Has Food? <%= pool.food? %></li>
+                <li class="list-group-item">Had Happy Hour? <%= pool.hh? %> </li>
+        </ul>
+        <div class="card-footer">
+            <a href="pools/<%= pool.id %>" class="card-link">View More Information</a>
+        </div>
+    </div>
+
 <% end %>
-<h3><a href="/user_home" class="buttons">Back to Home Page </a> </h3>
+</div>
+<br>
+<h3 class="text-center"><a href="/user_home" class="buttons">Back to Home Page </a> </h3>

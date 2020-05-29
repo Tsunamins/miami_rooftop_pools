@@ -1,67 +1,92 @@
-<div>
+<div class="addpool">
+    <h1>Add a New Pool to your list</h1>
+      <form action="/pool" method="post">
+        <div class="row">
+        
+          <div class="form-group col">
+              <label for="pool_name">Pool Name: 
+                <input class="form-control" type="text" name="pool[pool_name]" id="pool_name">
+              </label>
+          </div>
 
-<form action="/pool" method="post">
-  <div>
-  <ul class="addpool"><h2>Add a New Pool to your list</h2>
-    <li>
-      <label for="pool_name">Pool Name: </label>
-      <input type="text" name="pool[pool_name]" id="pool_name">
-    </li>
-    <li>
-      <label for="building_name">Name of the Hotel or Building: </label>
-      <input type="text" name="pool[building_name]" id="building_name">
-    </li>
-    <li>
-      <label for="address">Address: </label>
-      <input type="text" name="pool[address]" id="address">
-    </li>
-      <li>
-        <label for="website">Website: </label>
-        <input type="text" name="pool[website]" id="website">
-      </li>
-  </ul>
-  </div>
-    
-    <div class="addpool">
-      <p class="indent">Pool Description:</p>
-      <textarea class="indent" type="text" name="pool[pool_desc]" id="pool_desc" rows="10" cols="80" maxlength="500" placeholder="Enter a description, limit to 500 characters"></textarea>
-    </div>
-    
-    <div class="addpool"><p class="indent">Food and Drink:</p>
-      <label class="indent" for="has_food">Does the pool have food or a menu?</label>
-      <input type="checkbox" name="pool[has_food] value="has_food">
-      <label class="indent" for="has_happy_hour">Does the pool bar have a happy hour?</label>
-      <input type="checkbox" name="pool[has_happy_hour] value="has_happy_hour">
-    </div>
-    
-    <div>
-    <ul class="addpool">
-      <li>
-        <label for="pool_open">Pool Opens</label>
-        <input type="number" name="pool[pool_open]" id="pool_open"> AM
-      </li>
-      <li>
-        <label for="pool_close">Pool Closes</label>
-        <input type="number" name="pool[pool_close]" id="pool_close"> PM
-      </li>
-      <li>
-        <label for="hh_open">Happy Hour Starts</label>
-        <input type="number" name="pool[hh_open]" id="hh_open"> PM
-      </li>
-      <li>
-        <label for="hh_close">Happy Hour Ends</label>
-        <input type="number" name="pool[hh_close]" id="hh_close"> PM 
-      </li>
-      <li>
-        <input type="submit" value="Post Your Pool" class="buttons">
-      </li>
+          <div class="form-group col">
+              <label for="building_name">Hotel or Building: 
+                <input class="form-control" type="text" name="pool[building_name]" id="building_name">
+              </label>
+          </div>
 
-    </ul>
-    </div>
-  
-  
-</form>
+         <div class="form-group col">
+              <label for="website">Website: 
+                <input class="form-control" type="text" name="pool[website]" id="website">
+              </label>
+          </div>
 
-<h3><a href="/user_home" class="buttons">Back to Home Page </a> </h3>
+        <div class="form-group col"> 
+              <label for="address">Address: 
+                <input class="form-control" type="text" name="pool[address]" id="address">
+              </label>
+        </div>
+      </div>   
+
+     
+        
+          
+          <div class="addpool container">
+            <p class="indent">Pool Description:</p>
+            <div class="form-group">
+              <textarea class="indent form-control" type="text" name="pool[pool_desc]" id="pool_desc" rows="10" cols="60" maxlength="75%" placeholder="Enter a description, limit to 500 characters"></textarea>
+            </div>
+          </div>
+          
+          <div class="addpool">
+            <p>Food and Drink:</p>
+            <div class="row text-center">
+              <div class="form-group col">
+                <input class="form-check-input" id="has_food" type="checkbox" name="pool[has_food]" value="has_food" >
+                <label  for="has_food">Is there food available? </label>
+              </div>
+            <div class="form-group col"> 
+              <input class="form-check-input" id="has_happy_hour" type="checkbox" name="pool[has_happy_hour]" value="has_happy_hour">
+              <label  for="has_happy_hour">Is there a happy hour?</label>
+            
+            </div>
+          </div>
+          </div>
+          
+          <div class="row">
+          
+        
+              <div class="form-group col"> 
+                <label for="pool_open">Pool Opens
+                  <input class="form-control" type="number" name="pool[pool_open]" id="pool_open"> AM
+                </label>
+              </div>
+         
+            
+              <div class="form-group col"> 
+                <label for="pool_close">Pool Closes
+                  <input class="form-control" type="number" name="pool[pool_close]" id="pool_close"> PM
+                </label>
+              </div>
+           
+              <div class="form-group col"> 
+                <label for="hh_open">Happy Hour Starts
+                  <input class="form-control" type="number" name="pool[hh_open]" id="hh_open"> PM
+                </label>
+              </div>
+         
+              <div class="form-group col"> 
+                <label for="hh_close">Happy Hour Ends
+                  <input class="form-control" type="number" name="pool[hh_close]" id="hh_close"> PM 
+                </label>
+              </div>      
+          </div>
+        <div id="poolsubmit">
+         <input type="submit" value="Post Your Pool" class="buttons">
+        </div>
+      </form>
+      <hr>
+      <h3 class="text-center"><a href="/user_home" class="buttons">Back to Home Page </a> </h3>
+      
 
 </div>
